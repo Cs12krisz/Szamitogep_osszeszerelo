@@ -56,7 +56,12 @@ const App = () => {
     {name: "2 TB", price: 100000}
   ]
 
-  const totalPrice = (processor?.price || 0) + (memory?.price || 0) + (motherboard?.price || 0);
+  const GPUs = [
+    {name: "Nvidia 5000", price: 200000},
+    {name: "AMD 10000", price: 100000}
+  ]
+
+  const totalPrice = (processor?.price || 0) + (memory?.price || 0) + (motherboard?.price || 0) + (tapegyseg?.price || 0) + (SSD?.price || 0) + (GPU?.price || 0);
 
   return (
     <div>
@@ -90,6 +95,12 @@ const App = () => {
         options={SSDs}
         selectedOption={SSD}
         onSelect={setSSD}
+      />
+       <ComponentSelector
+        name="Videókártya"
+        options={GPUs}
+        selectedOption={GPU}
+        onSelect={setGPU}
       />
       <h3>Teljes ár: {totalPrice} HUF</h3>
     </div>
