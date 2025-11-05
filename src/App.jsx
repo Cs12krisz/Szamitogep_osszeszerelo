@@ -23,7 +23,7 @@ const ComponentSelector = ({ name, options, selectedOption, onSelect }) => {
   );
 };
 
-const App = () => {
+export const App = () => {
   const [processor, setProcessor] = useState(null);
   const [memory, setMemory] = useState(null);
   const [motherboard, setMotherBoard] = useState(null);
@@ -34,31 +34,37 @@ const App = () => {
   const processors = [
     { name: 'Intel i5', price: 50000 },
     { name: 'Intel i7', price: 75000 },
+    { name: "AMD 3250", price: 60000 }
   ];
  
   const memories = [
     { name: '8GB RAM', price: 12000 },
     { name: '16GB RAM', price: 25000 },
+    { name: "32GB RAM", price: 50000 }
   ];
 
   const motherboards = [
     { name: "MSI", price: 30000 },
-    { name: "AMD", price: 20000 }
+    { name: "AMD", price: 20000 },
+    { name: "Intel", price: 40000 }
   ]
 
   const tapegysegek = [
     {name: "400 W", price: 20000},
-    {name: "600 W", price: 25000}
+    {name: "600 W", price: 25000},
+    {name: "800 W", price: 50000}
   ]
 
   const SSDs = [
     {name: "1 TB", price: 50000},
-    {name: "2 TB", price: 100000}
+    {name: "2 TB", price: 100000},
+    {name: "500 GB", price: 25000}
   ]
 
   const GPUs = [
-    {name: "Nvidia 5000", price: 200000},
-    {name: "AMD 10000", price: 100000}
+    {name: "Geforce GTX 1650", price: 200000},
+    {name: "AMD 10000", price: 100000},
+    {name: "Geforce GTX 9999", price: 300000}
   ]
 
   const totalPrice = (processor?.price || 0) + (memory?.price || 0) + (motherboard?.price || 0) + (tapegyseg?.price || 0) + (SSD?.price || 0) + (GPU?.price || 0);
